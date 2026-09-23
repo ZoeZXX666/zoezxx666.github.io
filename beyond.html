@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beyond Research · Qianyi Zoe Zhang</title>
+  <meta name="description" content="Art, ballet, piano and travel — Qianyi Zoe Zhang beyond research.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #111111; --text: #2b2b2b; --muted: #7a7a7a; --rule: #111111; --hair: #e2e2e2;
+      --frame: 48px; --art: 34vh; --pad: 64px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; color: var(--text); background: #5d6aa6;
+      font-family: Inter, "Helvetica Neue", Arial, sans-serif; font-size: 15px; font-weight: 300; line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+    body::before {
+      content: ""; position: fixed; inset: 0; z-index: -1;
+      background: url("waterlilies.jpg") center / cover no-repeat,
+                  linear-gradient(135deg, #4f5d9c, #7c86c4 35%, #6f9a86 65%, #5467a3);
+    }
+    .art-label {
+      position: absolute; top: calc(var(--art) - 40px); right: max(var(--frame), calc((100vw - 1240px) / 2));
+      color: rgba(255,255,255,.95); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; text-shadow: 0 1px 6px rgba(0,0,0,.5);
+    }
+    .art-label i { text-transform: none; letter-spacing: .04em; font-size: 12px; }
+    .page { max-width: 1240px; margin: var(--art) auto var(--frame); background: #fff; }
+    a { color: var(--ink); text-decoration: none; }
+    .label { font-size: 11px; font-weight: 500; letter-spacing: .16em; text-transform: uppercase; color: var(--ink); }
+
+    nav { position: sticky; top: 0; z-index: 10; background: #fff; border-bottom: 1px solid var(--rule); }
+    .nav-inner { height: 56px; padding: 0 var(--pad); display: flex; justify-content: space-between; align-items: center; }
+    .nav-inner a:hover { opacity: .5; }
+    .back { border-bottom: 1px solid var(--ink); }
+
+    .intro { padding: 72px var(--pad) 40px; }
+    .intro h1 { font-size: 64px; font-weight: 300; letter-spacing: -0.025em; line-height: 1.02; color: var(--ink); margin: 0 0 16px; }
+    .intro p { color: var(--muted); margin: 0; }
+
+    .tabs { display: flex; flex-wrap: wrap; gap: 28px; padding: 18px var(--pad); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--hair); }
+    .tab { background: none; border: none; padding: 2px 0; cursor: pointer; font: inherit; font-size: 11px; font-weight: 500; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); border-bottom: 1px solid transparent; }
+    .tab:hover { color: var(--ink); }
+    .tab.active { color: var(--ink); border-bottom-color: var(--ink); }
+
+    .cat { display: grid; grid-template-columns: 240px 1fr; gap: 48px; padding: 48px var(--pad); border-bottom: 1px solid var(--hair); }
+    .cat h2 { margin: 0; padding-top: 4px; font-size: 11px; font-weight: 500; letter-spacing: .16em; text-transform: uppercase; color: var(--ink); }
+    .grid { columns: 3 220px; column-gap: 12px; }
+    figure { margin: 0 0 12px; break-inside: avoid; overflow: hidden; background: #f1f1f1; cursor: zoom-in; position: relative; }
+    figure img { width: 100%; display: block; transition: opacity .2s; }
+    figure:hover img { opacity: .85; }
+    figcaption { padding: 8px 0 2px; font-size: 12px; color: var(--muted); background: #fff; }
+    .empty { border: 1px solid var(--hair); padding: 28px; color: var(--muted); font-size: 13px; }
+    .empty code { font-family: inherit; color: var(--ink); border-bottom: 1px solid var(--hair); }
+
+    footer { display: flex; justify-content: space-between; gap: 16px; padding: 24px var(--pad); border-top: 1px solid var(--rule); color: var(--muted); font-size: 12px; }
+
+    .lightbox { position: fixed; inset: 0; z-index: 50; background: rgba(255,255,255,.97); display: none; align-items: center; justify-content: center; padding: 24px; cursor: zoom-out; flex-direction: column; gap: 14px; }
+    .lightbox.open { display: flex; }
+    .lightbox img { max-width: 100%; max-height: 84vh; }
+    .lightbox p { color: var(--muted); font-size: 12px; letter-spacing: .08em; margin: 0; }
+
+    @media (max-width: 900px) {
+      :root { --frame: 12px; --art: 24vh; --pad: 22px; }
+      .art-label { right: 18px; font-size: 10px; }
+      .intro { padding: 40px var(--pad) 28px; }
+      .intro h1 { font-size: 44px; }
+      .tabs { gap: 18px; }
+      .cat { grid-template-columns: 1fr; gap: 18px; padding: 32px var(--pad); }
+      .grid { columns: 2 140px; column-gap: 8px; }
+      figure { margin-bottom: 8px; }
+      footer { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+<div class="art-label">Claude Monet, <i>Water Lilies</i></div>
+<div class="page">
+
+  <nav>
+    <div class="nav-inner">
+      <a class="label" href="index.html">Qianyi Zoe Zhang</a>
+      <a class="label back" href="index.html">← Back to Research</a>
+    </div>
+  </nav>
+
+  <header class="intro">
+    <h1>Beyond Research</h1>
+    <p>Art, ballet, piano, and places I have traveled.</p>   <!-- EDIT: write your own intro line -->
+  </header>
+
+  <div class="tabs" id="tabs">
+    <button class="tab active" data-filter="all">All</button>
+    <button class="tab" data-filter="art">Art</button>
+    <button class="tab" data-filter="ballet">Ballet</button>
+    <button class="tab" data-filter="piano">Piano</button>
+    <button class="tab" data-filter="travel">Travel</button>
+  </div>
+
+  <section class="cat" data-cat="art"   ><h2>Art</h2><div class="grid"></div></section>
+  <section class="cat" data-cat="ballet"><h2>Ballet</h2><div class="grid"></div></section>
+  <section class="cat" data-cat="piano" ><h2>Piano</h2><div class="grid"></div></section>
+  <section class="cat" data-cat="travel"><h2>Travel</h2><div class="grid"></div></section>
+
+  <footer><span>© 2026 Qianyi Zoe Zhang</span><span>Background: Claude Monet, <i>Water Lilies</i></span></footer>
+</div>
+
+<div class="lightbox" id="lightbox"><img alt=""><p></p></div>
+
+<script>
+  /* =====================================================================
+     HOW TO ADD PHOTOS — no code editing needed:
+     upload files named  art1.jpg, art2.jpg …  ballet1.jpg …  piano1.jpg …  travel1.jpg …
+     (up to 12 per category; .jpg, .jpeg or .png all work). They appear automatically, in number order.
+
+     OPTIONAL captions (shown on hover and in the enlarged view) — add a line like:
+       "travel1": "Stockholm, Sweden",
+  ===================================================================== */
+  const captions = {
+    // "art1": "Musée de l'Orangerie, Paris",
+    // "travel1": "Stockholm, Sweden",
+  };
+
+  const MAX_PER_CATEGORY = 12;
+  const EXTENSIONS = ["jpg", "jpeg", "png"];
+
+  function tryLoad(name, i = 0) {
+    return new Promise(resolve => {
+      if (i >= EXTENSIONS.length) return resolve(null);
+      const img = new Image();
+      img.onload = () => resolve(img);
+      img.onerror = () => tryLoad(name, i + 1).then(resolve);
+      img.src = `${name}.${EXTENSIONS[i]}`;
+    });
+  }
+
+  document.querySelectorAll(".cat").forEach(async section => {
+    const cat = section.dataset.cat;
+    const grid = section.querySelector(".grid");
+    const names = Array.from({ length: MAX_PER_CATEGORY }, (_, k) => `${cat}${k + 1}`);
+    const results = await Promise.all(names.map(n => tryLoad(n)));
+    let count = 0;
+    results.forEach((img, k) => {
+      if (!img) return;
+      count++;
+      const fig = document.createElement("figure");
+      img.alt = captions[names[k]] || `${cat} photo ${k + 1}`;
+      img.loading = "lazy";
+      fig.appendChild(img);
+      if (captions[names[k]]) {
+        const cap = document.createElement("figcaption");
+        cap.textContent = captions[names[k]];
+        fig.appendChild(cap);
+      }
+      fig.addEventListener("click", () => openLightbox(img.src, captions[names[k]] || ""));
+      grid.appendChild(fig);
+    });
+    if (count === 0) {
+      grid.outerHTML = `<div class="empty">Photos coming soon — upload <code>${cat}1.jpg</code>, <code>${cat}2.jpg</code> … to fill this section.</div>`;
+    }
+  });
+
+  /* filter tabs */
+  document.getElementById("tabs").addEventListener("click", e => {
+    const btn = e.target.closest(".tab");
+    if (!btn) return;
+    document.querySelectorAll(".tab").forEach(t => t.classList.toggle("active", t === btn));
+    const f = btn.dataset.filter;
+    document.querySelectorAll(".cat").forEach(s => { s.style.display = (f === "all" || s.dataset.cat === f) ? "" : "none"; });
+  });
+
+  /* enlarged view */
+  const lb = document.getElementById("lightbox");
+  function openLightbox(src, text) {
+    lb.querySelector("img").src = src;
+    lb.querySelector("p").textContent = text;
+    lb.classList.add("open");
+  }
+  lb.addEventListener("click", () => lb.classList.remove("open"));
+  document.addEventListener("keydown", e => { if (e.key === "Escape") lb.classList.remove("open"); });
+</script>
+</body>
+</html>
