@@ -67,7 +67,6 @@
     .hero-info p { margin: 0 0 4px; font-size: 16px; color: var(--text); }
     .hero-info .role { font-size: 20px; font-weight: 400; color: var(--ink); margin-bottom: 10px; }
     .hero-info .contact { margin-top: 18px; padding-top: 18px; border-top: 1px solid var(--hair); }
-    .hero-info .sep { color: var(--hair); margin: 0 14px; }
     .icons { display: flex; margin-top: 32px; }
     .icon {
       width: 46px; height: 46px; display: flex; align-items: center; justify-content: center;
@@ -129,7 +128,6 @@
       .hero { grid-template-columns: 1fr; gap: 36px; padding: 40px var(--pad) 48px; }
       .photo { order: -1; max-width: 280px; }
       h1 { font-size: 44px; }
-      .hero-info .sep { display: block; height: 0; overflow: hidden; margin: 0; }
       section { grid-template-columns: 1fr; gap: 20px; padding: 40px var(--pad); }
       .rows li { grid-template-columns: 1fr; gap: 4px; }
       .langs { grid-template-columns: 1fr 1fr; }
@@ -167,11 +165,11 @@
         <p class="role">PhD Candidate</p>
         <p>Institute for Responsibility and Sustainability in Global Business (RSGB-I)</p>
         <p>WU Vienna University of Economics and Business</p>
-        <p class="contact">Vienna, Austria<span class="sep">/</span><a class="ul" href="mailto:qianyi.zhang@wu.ac.at">qianyi.zhang@wu.ac.at</a></p>
+        <p class="contact">Vienna, Austria</p>
       </div>
 
       <div class="icons">
-        <a class="icon" href="mailto:qianyi.zhang@wu.ac.at" title="Email" aria-label="Email">
+        <a class="icon js-mail" href="#" title="Email" aria-label="Email">
           <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14"/><path d="M3 6l9 7 9-7"/></svg>
         </a>
         <a class="icon" href="https://www.linkedin.com/in/zoe-qianyi-zhang/" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn">
@@ -305,5 +303,17 @@
   </footer>
 
 </div>
+<script>
+  /* The email address is never written out in this page, so spam bots that scan
+     websites for addresses cannot find it. It is pieced together only when someone
+     clicks the email icon. */
+  document.querySelectorAll(".js-mail").forEach(function (link) {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+      var parts = ["qianyi.zhang", "wu.ac", "at"];
+      window.location.href = "mai" + "lto:" + parts[0] + String.fromCharCode(64) + parts[1] + "." + parts[2];
+    });
+  });
+</script>
 </body>
 </html>
